@@ -7,12 +7,17 @@ import java.util.Random;
 
 public class JedisTest {
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("localhost",6379);
-//        jedis.lpush("b","hello");
-        String b1 = jedis.lpop("b");
-        System.out.println(b1);
+        Jedis jedis = new Jedis("192.168.31.83",6379);
+        jedis.auth("102938");
+
+//        jedis.
+//        jedis.lpush("b","hello","\0","\t","[12345566]");
+//        String b1 = jedis.lpop("b");
+//        System.out.println(b);
 //        jedis.lpush("b", String.valueOf(new Random().nextInt()));
         List<String> b = jedis.lrange("b", 0, -1);
+
+        jedis.close();
 
         System.out.println(b);
     }

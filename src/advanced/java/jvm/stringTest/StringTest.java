@@ -21,5 +21,10 @@ public class StringTest {
 
         System.out.println(System.getenv("JAVA_HOME"));
         System.out.println(System.getProperty("java.version"));
+        try {
+            Thread.sleep(1000000);
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
     }
 }
