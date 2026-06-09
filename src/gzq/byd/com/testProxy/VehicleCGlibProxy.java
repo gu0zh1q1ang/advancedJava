@@ -15,7 +15,7 @@ public class VehicleCGlibProxy implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        System.out.println(method.getName()+"proxied!");
+        System.out.println(method.getName()+" proxied!");
 
         A4CGLib annotation = method.getAnnotation(A4CGLib.class);
         if(annotation!=null) {

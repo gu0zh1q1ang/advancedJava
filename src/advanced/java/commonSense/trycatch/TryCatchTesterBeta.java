@@ -10,8 +10,8 @@ public class TryCatchTesterBeta {
     private static Logger logger = Logger.getLogger(TryCatchTesterBeta.class);
     public static void main(String[] args) {
 //        System.out.println(test());
-        logger.error(test());
-//        logger.error(Arrays.toString(testQuote()));
+//        logger.error(test());
+        logger.error(Arrays.toString(testQuote()));
 //        int b = 5;
 //        changint(b);
 //        System.out.println(b);
@@ -34,7 +34,7 @@ public class TryCatchTesterBeta {
             a=a+" append catch";
             return a;
         } finally {
-            a=a+" append finally";
+            a=a.replace("a","b");
             logger.error("finally "+a);
         }
     }
@@ -44,12 +44,14 @@ public class TryCatchTesterBeta {
         try {
 //            System.out.println(Arrays.toString(b));
             logger.error(Arrays.toString(b));
+            int c = 3/0;
             return b;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.err);
+            b[0]=4;
             return b;
         } finally {
-            b[0]=3;
+//            b[0]=3;
             logger.error(Arrays.toString(b));
         }
     }

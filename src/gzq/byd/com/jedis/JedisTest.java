@@ -1,19 +1,31 @@
 package gzq.byd.com.jedis;
 
+import redis.clients.jedis.Connection;
 import redis.clients.jedis.Jedis;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class JedisTest {
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("localhost",6379);
-//        jedis.lpush("b","hello");
-        String b1 = jedis.lpop("b");
-        System.out.println(b1);
-//        jedis.lpush("b", String.valueOf(new Random().nextInt()));
-        List<String> b = jedis.lrange("b", 0, -1);
+        Jedis jedis = new Jedis("192.168.77.177",6379);
+        jedis.auth("102938");
 
-        System.out.println(b);
+        // 存hash
+        /*Map<String,String> todos = new HashMap<>();
+        todos.put("name", "张三");
+        todos.put("age", "13");
+        todos.put("desc", "{\"from\":\"山西\t大同\"}");
+
+        jedis.hmset("student", todos);*/
+
+        jedis.hset("student", "desc", "{\"from\":\"山西\t大同\"}");
+        Map<String, String> student = jedis.hgetAll("student");
+        for (Map.Entry<String, String> stringStringEntry : student.entrySet()) {
+            System.out.println(stringStringEntry.getKey()+":"+stringStringEntry.getValue());
+        }
+        jedis.close();
     }
 }
