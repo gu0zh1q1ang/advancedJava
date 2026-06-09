@@ -2,11 +2,11 @@ package advanced.java.threads;
 
 public class Receiver implements Runnable{
 
-    private final Data data;
+    private final Data2 data;
 
     private String notice;
 
-    public Receiver(Data data) {
+    public Receiver(Data2 data) {
         this.data = data;
     }
 

@@ -13,7 +13,7 @@ public class MyOuter {
         this.innerList = innerList;
     }
 
-    static class MyInner{
+    private static class MyInner{
         private String innerName;
 
         public MyInner() {

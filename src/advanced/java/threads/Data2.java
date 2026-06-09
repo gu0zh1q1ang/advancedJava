@@ -1,6 +1,6 @@
 package advanced.java.threads;
 
-public class Data {
+public class Data2 {
 
     private String message;
 

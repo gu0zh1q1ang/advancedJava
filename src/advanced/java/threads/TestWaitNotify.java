@@ -1,12 +1,11 @@
 package advanced.java.threads;
 
-import gzq.byd.com.socket.Request;
 import org.openjdk.jol.info.ClassLayout;
 
 public class TestWaitNotify {
 
     public static void main(String[] args) {
-        Data data = new Data();
+        Data2 data = new Data2();
 
         Receiver receiverData = new Receiver(data);
         Thread receiver = new Thread(receiverData, "receiver");
