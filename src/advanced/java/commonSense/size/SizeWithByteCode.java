@@ -62,7 +62,6 @@ public class SizeWithByteCode {
 
         System.out.println(testChildStringFunction.apply(new TestChild(199)));
         LocalDateTime birthday = LocalDateTime.of(1998, 4, 28, 5, 38, 0);
-        birthday.format()
     }
 }
 
