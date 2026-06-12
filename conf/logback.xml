@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <property name="spring49.pattern" value="%d{HH:mm:ss} [%thread] %highlight(%-5level) %logger{20} - %method%boldCyan(\\(%file:%line\\)) - %boldMagenta(%msg) %n"/>
+    <property name="plain.out.pattern" value="%logger{20} - %method\\(%file:%line\\) - %boldMagenta(%msg) %n "/>
+
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="console">
+        <encoder>
+            <pattern>${spring49.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="slim">
+        <encoder>
+            <pattern>${plain.out.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="vip.gzq" level="debug" />
+    <logger name="org.springframework" level="warn" />
+    <logger name="com.alibaba.druid" level="debug" />
+    <logger name="advanced.java" level="debug">
+        <appender-ref ref="console" />
+    </logger>
+</configuration>
