@@ -1,5 +1,6 @@
 package advanced.java.commonSense.size;
 
+import java.net.ServerSocket;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -33,7 +34,9 @@ class TestChild extends TestStatic {
     }
 }
 public class SizeWithByteCode {
+    static int i;
     public static void main(String[] args) {
+        System.out.println(i);
         TestStatic.test();
         TestChild.test();
         TestStatic aaa = new TestChild(12);
@@ -62,6 +65,7 @@ public class SizeWithByteCode {
 
         System.out.println(testChildStringFunction.apply(new TestChild(199)));
         LocalDateTime birthday = LocalDateTime.of(1998, 4, 28, 5, 38, 0);
+
     }
 }
 
