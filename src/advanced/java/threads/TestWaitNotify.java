@@ -11,7 +11,7 @@ public class TestWaitNotify {
         Thread receiver = new Thread(receiverData, "receiver");
         receiver.start();
 
-        System.out.println(ClassLayout.parseInstance(receiver).toPrintable());
+//        System.out.println(ClassLayout.parseInstance(receiver).toPrintable());
 
         Sender senderData = new Sender(data);
         Thread sender = new Thread(senderData, "sender");
